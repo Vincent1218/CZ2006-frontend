@@ -1,0 +1,67 @@
+.NavBar{
+  height: 6vh;
+  background: #FFE0AC;
+  position: fixed;
+  width: 100vw ;
+  display: flex;
+  padding: 0;
+  font-weight: bold;
+  font-size: 1rem;
+  align-items: center;
+}
+
+.NavBarSub1{
+  text-align: center;
+  padding: 0;
+}
+
+.NavBarSub2{
+  padding: 0;
+}
+
+.NavBarSub3{
+  padding: 0;
+}
+
+.NavBarBtn{
+  text-decoration: none;
+  width: 100% ;
+}
+
+.signInBtn{
+  background-color: #ffb12b;
+  height: 2.5rem;
+  width: 6rem;
+  border-radius: .3rem;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.signInBtn:hover {
+  background-color: #8d816e;
+}
+
+.Logo{
+  margin: auto;
+  font-size: 1.5rem;
+  color: #FFAA1C;
+}
+
+.NavBarSearch{
+  width: 100% ;
+}
+
+.NavBarSub1{
+  width: 10%;
+}
+
+.NavBarSub2{
+  width: 75%;
+}
+
+.NavBarSub3{
+  width: 15%;
+}

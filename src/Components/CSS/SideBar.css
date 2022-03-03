@@ -1,0 +1,88 @@
+
+/* FADE ANIMATIONS */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 400ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 400ms;
+}
+
+/* SIDEBAR */
+.sideBtn{
+  position: absolute;
+  top: 49%;
+  width: 1.6%;
+  border-radius: 0 .5rem .5rem 0;
+  background-color:#ffb12b;
+  transition: 0.4s ease-in;
+  height: 8%;
+  margin-left: 45%;
+  z-index: 1;
+}
+
+.sideBtn-closed{
+  margin-left: 4%;
+  transition: 0.4s ease-in;
+}
+
+.sidebarBtn {
+  margin-top: 1rem;
+  background: transparent;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 4px;
+  color: white;
+  transition: 0.3s linear;
+}
+
+.sidebar {
+  margin-top: 6vh;
+  position: fixed;
+  width: 45%;
+  height: 94%;
+  background: #ffb12b;
+  /* color: white; */
+  transition: 0.4s ease-in;
+  z-index: -1;
+}
+
+.sidebar-closed {
+  width: 4%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebarList {
+  display: flex;
+  flex-direction: column;
+}
+
+.row1{
+  height: 23.5vh;
+}
+
+.row2{
+  height: 23.5vh;
+}
+
+.row3{
+  height: 23.5vh;
+}
+
+.row4{
+  height: 23.5vh;
+}
