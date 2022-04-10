@@ -26,10 +26,10 @@ const BTOCard = ({BTO, bookmarkList, setBookmarkList}) => {
       if(markClicked){
         const json = JSON.stringify({ id: id});
         const res = await axios.post('http://172.21.148.171/api/remove-bookmark', json, { headers: {'Authorization' : `Bearer ${token}`} });
-        if(res.status==204){
+        if(res.status===204){
           // console.log("Bookmard removed")
           var filtered = bookmarkList.filter(function(value, index, arr){ 
-              return value != id;
+              return value !== id;
           });
           setBookmarkList(filtered);
         }
@@ -40,7 +40,7 @@ const BTOCard = ({BTO, bookmarkList, setBookmarkList}) => {
       else{
         const json = JSON.stringify({ id: id});
         const res = await axios.post('http://172.21.148.171/api/add-bookmark',  json, { headers: {'Authorization' : `Bearer ${token}`} });
-        if(res.status==204){
+        if(res.status===204){
           // console.log("Bookmard added")
           let tempArr = [...bookmarkList];
           tempArr.push(id);

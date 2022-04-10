@@ -25,7 +25,7 @@ const NavBar = ({BTOS,setSearchedBTOList}) => {
     if (token) {
       try{
         const res = await axios.post('http://172.21.148.171/api/logout','',{ headers: {'Authorization' : `Bearer ${token}`} });
-        if(res.status==204){
+        if(res.status===204){
           // console.log("Logged Out")
           localStorage.clear();
           let path = `/`; 
