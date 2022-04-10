@@ -36,6 +36,7 @@ const BookMark = () => {
         try{
           const res = await axios.get(`https://cors-everywhere.herokuapp.com/http://ec2-18-144-59-5.us-west-1.compute.amazonaws.com/api/bto-projects-by-ids?`+stringParam);
           if(res.status===200){
+            // console.log(res.data);
             setBTOS(res.data);
           }
         }

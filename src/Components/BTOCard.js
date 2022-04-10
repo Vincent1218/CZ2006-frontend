@@ -71,7 +71,6 @@ const BTOCard = ({BTO, bookmarkList, setBookmarkList, setMessage, setShowNotific
             component="img"
             height="220"
             image={BTO.preview_image}
-            alt="building"
           />
           <CardContent onClick={() => clickCard()}>
             <div className="cardContainer1">

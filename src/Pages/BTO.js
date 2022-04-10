@@ -78,6 +78,7 @@ const BTO = () => {
         if(res.status===200){
           setBTO(res.data[0]);
           // console.log(res.data[0])
+          // console.log(res.data[0])
         }
       }
       catch(error){
@@ -107,7 +108,7 @@ const BTO = () => {
           <div className="BTOSubTitle">EST TOP Date</div>
           <div className="BTOContent">{new Date(BTO.est_date*1000).toLocaleDateString()}</div>
         </div>
-        <img className="BTOContainer2 BTOImage" src="https://static.mothership.sg/1/2021/02/bidadari-completed.png" alt="Building"/>
+        <img className="BTOContainer2 BTOImage" src="https://static.mothership.sg/1/2021/02/bidadari-completed.png" />
         <div className="BTOContainer2">
           <div className="BTOSubTitle">Scoring</div>
           <Grid container spacing={2}>
