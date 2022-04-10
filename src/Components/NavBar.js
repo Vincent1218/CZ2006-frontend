@@ -7,7 +7,7 @@ import Popover from '@mui/material/Popover';
 import Button from '@mui/material/Button';
 import axios from 'axios';
 
-const NavBar = ({BTOS, setSearchedBTOList}) => {
+const NavBar = ({BTOS, setSearchedBTOList, setMessage, setShowNotification, setLevel}) => {
   let navigate = useNavigate(); 
   const [isLogin, setIsLogin] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -31,6 +31,10 @@ const NavBar = ({BTOS, setSearchedBTOList}) => {
           let path = `/`; 
           navigate(path);
           window.location.reload(false);
+          setMessage("Log Out Successfully!");
+          setLevel("success")
+          setShowNotification(true);
+          setTimeout(() => {setShowNotification(false)}, 2000);
         }
       }
       catch(error){

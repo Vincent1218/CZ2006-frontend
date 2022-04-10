@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <div className = "home">
       <Notification showNotification={showNotification} message={message} level={level} />
-      <NavBar BTOS={filteredBTOList} setSearchedBTOList={setSearchedBTOList}/>
+      <NavBar setMessage={setMessage} setShowNotification={setShowNotification} setLevel={setLevel} BTOS={filteredBTOList} setSearchedBTOList={setSearchedBTOList}/>
       <SideBar setFilteredBTOList={setFilteredBTOList}/>
       <Map BTOS={(searchedBTOList!=='%') ? searchedBTOList : filteredBTOList} setMessage={setMessage} setShowNotification={setShowNotification} setLevel={setLevel}/>
     </div>
