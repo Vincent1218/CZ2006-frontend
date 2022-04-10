@@ -1,0 +1,7 @@
+.Notification{
+  z-index: 10;
+  position: absolute;
+  top: 5%;
+  width: 40%;
+  left: 30%;
+}

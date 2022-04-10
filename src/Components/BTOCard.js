@@ -11,7 +11,7 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
 
-const BTOCard = ({BTO, bookmarkList, setBookmarkList}) => {
+const BTOCard = ({BTO, bookmarkList, setBookmarkList, setMessage, setShowNotification}) => {
   let navigate = useNavigate(); 
   const [markClicked, setMarkClicked] = useState(bookmarkList.includes(BTO.id));  
   const clickCard = () =>{
@@ -34,7 +34,7 @@ const BTOCard = ({BTO, bookmarkList, setBookmarkList}) => {
           setBookmarkList(filtered);
         }
         else{
-          // console.log("Not Loggin")
+          // console.log("Login error")
         }
       }
       else{
@@ -47,13 +47,15 @@ const BTOCard = ({BTO, bookmarkList, setBookmarkList}) => {
           setBookmarkList(tempArr);
         }
         else{
-          // console.log("Not Loggin")
+          // console.log("Login error")
         }
       }
       setMarkClicked(!markClicked);
     }
     else{
-      // console.log("Not Logged In")
+      setMessage("You are not logged in! Please sign in to use bookmark feature.");
+      setShowNotification(true);
+      setTimeout(() => {setShowNotification(false)}, 2000);
     }
 
 
@@ -62,79 +64,80 @@ const BTOCard = ({BTO, bookmarkList, setBookmarkList}) => {
 
   return (
     <div className="cardContainer">
-    <Card sx={{ boxShadow: 0, maxWidth: 450}}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="220"
-          image={BTO.preview_image}
-          alt="building"
-        />
-        <CardContent onClick={() => clickCard()}>
-          <div className="cardContainer1">
-            <div className="cardTitle"> {BTO.name} </div>
-            <BookmarkIcon sx={{ color: markClicked ? '#FFE0AC' : '#dddddd'}} onClick={(e) => bookMark(e,BTO.id)}/>
-          </div>          
-          <div className="cardContainer2">
-            <div className="cardSubTitle">EST TOP Date</div>
-            <div className="cardDate">{new Date(BTO.est_date*1000).toLocaleDateString()}</div>
-          </div>
-          <Grid container spacing={2}>
-            <Grid item xs={12} xl={6}>
-              <div className="cardContainer1">
-                <div className="cardSubTitle">Education</div>
-                <Rating name="read-only" size="small" value={BTO.scores_detail.education.score} readOnly />
-              </div>
+
+      <Card sx={{ boxShadow: 0, maxWidth: 450}}>
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            height="220"
+            image={BTO.preview_image}
+            alt="building"
+          />
+          <CardContent onClick={() => clickCard()}>
+            <div className="cardContainer1">
+              <div className="cardTitle"> {BTO.name} </div>
+              <BookmarkIcon sx={{ color: markClicked ? '#FFE0AC' : '#dddddd'}} onClick={(e) => bookMark(e,BTO.id)}/>
+            </div>          
+            <div className="cardContainer2">
+              <div className="cardSubTitle">EST TOP Date</div>
+              <div className="cardDate">{new Date(BTO.est_date*1000).toLocaleDateString()}</div>
+            </div>
+            <Grid container spacing={2}>
+              <Grid item xs={12} xl={6}>
+                <div className="cardContainer1">
+                  <div className="cardSubTitle">Education</div>
+                  <Rating name="read-only" size="small" value={BTO.scores_detail.education.score} readOnly />
+                </div>
+              </Grid>
+              <Grid item xs={12} xl={6}>
+                <div className="cardContainer1">
+                  <div className="cardSubTitle">Recreation</div>
+                  <Rating name="read-only" size="small" value={BTO.scores_detail.recreation.score} readOnly />
+                </div>
+              </Grid>
+              <Grid item xs={12} xl={6}>
+                <div className="cardContainer1">
+                  <div className="cardSubTitle">Convenience</div>
+                  <Rating name="read-only" size="small" value={BTO.scores_detail.convenience.score} readOnly />
+                </div>
+              </Grid>
+              <Grid item xs={12} xl={6}>
+                <div className="cardContainer1">
+                  <div className="cardSubTitle">Transportation</div>
+                  <Rating name="read-only" size="small" value={BTO.scores_detail.transportation.score} readOnly />
+                </div>
+              </Grid>
             </Grid>
-            <Grid item xs={12} xl={6}>
-              <div className="cardContainer1">
-                <div className="cardSubTitle">Recreation</div>
-                <Rating name="read-only" size="small" value={BTO.scores_detail.recreation.score} readOnly />
-              </div>
+            <div className="blank"></div>
+            <Grid container spacing={2}>
+              <Grid Grid item xs={12} xl={6}>
+                <div className="cardContainer1">
+                  <div className="cardSubTitle">2 Rooms</div>
+                  <div className="cardPrice">{BTO.price_by_room.two_rooms.lower}-{BTO.price_by_room.two_rooms.higher}</div>
+                </div>
+              </Grid>
+              <Grid item xs={12} xl={6}>  
+                <div className="cardContainer1">
+                  <div className="cardSubTitle">3 Rooms</div>
+                  <div className="cardPrice">{BTO.price_by_room.three_rooms.lower}-{BTO.price_by_room.three_rooms.higher}</div>
+                </div>
+              </Grid>
+              <Grid item xs={12} xl={6}>
+                <div className="cardContainer1">
+                  <div className="cardSubTitle">4 Rooms</div>
+                  <div className="cardPrice">{BTO.price_by_room.four_rooms.lower}-{BTO.price_by_room.four_rooms.higher}</div>
+                </div>
+              </Grid>
+              <Grid item xs={12} xl={6}>
+                <div className="cardContainer1">
+                  <div className="cardSubTitle">5 Rooms</div>
+                  <div className="cardPrice">{BTO.price_by_room.five_rooms.lower}-{BTO.price_by_room.five_rooms.higher}</div>
+                </div>
+              </Grid>
             </Grid>
-            <Grid item xs={12} xl={6}>
-              <div className="cardContainer1">
-                <div className="cardSubTitle">Convenience</div>
-                <Rating name="read-only" size="small" value={BTO.scores_detail.convenience.score} readOnly />
-              </div>
-            </Grid>
-            <Grid item xs={12} xl={6}>
-              <div className="cardContainer1">
-                <div className="cardSubTitle">Transportation</div>
-                <Rating name="read-only" size="small" value={BTO.scores_detail.transportation.score} readOnly />
-              </div>
-            </Grid>
-          </Grid>
-          <div className="blank"></div>
-          <Grid container spacing={2}>
-            <Grid Grid item xs={12} xl={6}>
-              <div className="cardContainer1">
-                <div className="cardSubTitle">2 Rooms</div>
-                <div className="cardPrice">{BTO.price_by_room.two_rooms.lower}-{BTO.price_by_room.two_rooms.higher}</div>
-              </div>
-            </Grid>
-            <Grid item xs={12} xl={6}>  
-              <div className="cardContainer1">
-                <div className="cardSubTitle">3 Rooms</div>
-                <div className="cardPrice">{BTO.price_by_room.three_rooms.lower}-{BTO.price_by_room.three_rooms.higher}</div>
-              </div>
-            </Grid>
-            <Grid item xs={12} xl={6}>
-              <div className="cardContainer1">
-                <div className="cardSubTitle">4 Rooms</div>
-                <div className="cardPrice">{BTO.price_by_room.four_rooms.lower}-{BTO.price_by_room.four_rooms.higher}</div>
-              </div>
-            </Grid>
-            <Grid item xs={12} xl={6}>
-              <div className="cardContainer1">
-                <div className="cardSubTitle">5 Rooms</div>
-                <div className="cardPrice">{BTO.price_by_room.five_rooms.lower}-{BTO.price_by_room.five_rooms.higher}</div>
-              </div>
-            </Grid>
-          </Grid>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+          </CardContent>
+        </CardActionArea>
+      </Card>
     </div>
   )
 }
