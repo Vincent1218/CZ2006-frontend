@@ -53,7 +53,7 @@ const BookMark = () => {
 
   return (
     <div className="bookMarkContainer">
-      <NavBar/>
+      <NavBar BTOS={BTOS} setSearchedBTOList={"NA"} />
       <div className="bookMarkBox">
         <Grid container spacing={6}>
           {BTOS?.map((BTO,i) =>(

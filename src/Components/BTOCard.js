@@ -11,7 +11,7 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
 
-const BTOCard = ({BTO, bookmarkList, setBookmarkList, setMessage, setShowNotification}) => {
+const BTOCard = ({BTO, bookmarkList, setBookmarkList, setMessage, setShowNotification, setLevel}) => {
   let navigate = useNavigate(); 
   const [markClicked, setMarkClicked] = useState(bookmarkList.includes(BTO.id));  
   const clickCard = () =>{
@@ -54,6 +54,7 @@ const BTOCard = ({BTO, bookmarkList, setBookmarkList, setMessage, setShowNotific
     }
     else{
       setMessage("You are not logged in! Please sign in to use bookmark feature.");
+      setLevel("error")
       setShowNotification(true);
       setTimeout(() => {setShowNotification(false)}, 2000);
     }

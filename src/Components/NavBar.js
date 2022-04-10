@@ -7,7 +7,7 @@ import Popover from '@mui/material/Popover';
 import Button from '@mui/material/Button';
 import axios from 'axios';
 
-const NavBar = ({BTOS,setSearchedBTOList}) => {
+const NavBar = ({BTOS, setSearchedBTOList}) => {
   let navigate = useNavigate(); 
   const [isLogin, setIsLogin] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -67,9 +67,12 @@ const NavBar = ({BTOS,setSearchedBTOList}) => {
       <div className = "NavBarSub1">
         <NavLink className = "NavBarBtn Logo" to="/" > Kaya </NavLink>
       </div>
-      <div className = "NavBarSub2">
-        <TextField  onChange={search} className = "SearchBar" hiddenLabel placeholder="Search For BTO" size="small" variant="outlined" />      
-      </div>
+      {(setSearchedBTOList==="NA")
+        ?<div className = "NavBarSub2"> </div>
+        :<div className = "NavBarSub2">
+          <TextField  onChange={search} className = "SearchBar" hiddenLabel placeholder="Search For BTO" size="small" variant="outlined" />      
+        </div>
+      }
       <div className = "NavBarSub3">
         {isLogin ?
         <div className = "NavBarContainer">

@@ -5,11 +5,15 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import {NavLink} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Notification from '../Components/Notification'
 
 const Signin = () => {
   let navigate = useNavigate(); 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showNotification, setShowNotification] = useState(false);
+  const [message, setMessage] = useState("");
+  const [level, setLevel] = useState("");
 
   const clickSignin = async() =>{
     // console.log(email);
@@ -20,21 +24,38 @@ const Signin = () => {
     var hash = hashObj.getHash("HEX");
     // console.log(hash)
     const json = JSON.stringify({ email: email, hashed_password: hash});
-    const res = await axios.post('https://cors-everywhere.herokuapp.com/http://ec2-18-144-59-5.us-west-1.compute.amazonaws.com/api/login', json);
-    if(res.status===200){
-      // console.log("User Loggedin")
-      // Get jwttoken here
-      localStorage.setItem('token', res.data.token)
-      let path = `/`; 
-      navigate(path);
+    try{
+      const res = await axios.post('https://cors-everywhere.herokuapp.com/http://ec2-18-144-59-5.us-west-1.compute.amazonaws.com/api/login', json);
+      if(res.status===200){
+        // console.log("User Loggedin")
+        // Get jwttoken here
+        localStorage.setItem('token', res.data.token)
+        // setMessage("Log In Successfully!");
+        // setLevel("success")
+        // setShowNotification(true);
+        // setTimeout(() => {setShowNotification(false)}, 2000);
+        let path = `/`; 
+        navigate(path);
+      }
+      else{
+        setMessage("Sign In Failed!");
+        setLevel("error")
+        setShowNotification(true);
+        setTimeout(() => {setShowNotification(false)}, 2000);
+      }
     }
-    else{
-      // console.log("Login failed")
+    catch(error){
+      setMessage("Sign In Failed!");
+      setLevel("error")
+      setShowNotification(true);
+      setTimeout(() => {setShowNotification(false)}, 2000);
     }
+    
   }
   
   return (
     <div className="signContainer">
+      <Notification showNotification={showNotification} message={message} level={level} />
       <div className="signBox">
           <div className="signLogo">
             Kaya

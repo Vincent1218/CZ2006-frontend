@@ -6,7 +6,7 @@ import Popover from '@mui/material/Popover';
 import './CSS/Map.css'
 import axios from 'axios';
 
-const Map = ({BTOS, setMessage, setShowNotification}) => {
+const Map = ({BTOS, setMessage, setShowNotification, setLevel}) => {
   const coords = { lat: 1.3521, lng: 103.8198 };
   const [anchorEl, setAnchorEl] = useState(null);
   const [cardNo, setCardNo] = useState(0);
@@ -88,7 +88,7 @@ const Map = ({BTOS, setMessage, setShowNotification}) => {
         }}
         disableRestoreFocus
       >
-        <BTOCard setMessage={setMessage} setShowNotification={setShowNotification} BTO={BTOS[cardNo]} bookmarkList={bookmarkList} setBookmarkList={setBookmarkList} />
+        <BTOCard setLevel={setLevel} setMessage={setMessage} setShowNotification={setShowNotification} BTO={BTOS[cardNo]} bookmarkList={bookmarkList} setBookmarkList={setBookmarkList} />
       </Popover>
       </GoogleMapReact>
     </div>
