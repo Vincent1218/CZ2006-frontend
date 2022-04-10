@@ -21,11 +21,11 @@
 /* SIDEBAR */
 .sideBtn{
   position: absolute;
-  top: 49%;
+  top: 49.5%;
   width: 1.6%;
   border-radius: 0 .5rem .5rem 0;
-  background-color:#ffb12b;
-  transition: 0.4s ease-in;
+  background-color:#ffd894;
+  transition: 0.3s ease-in;
   height: 8%;
   margin-left: 45%;
   z-index: 1;
@@ -33,28 +33,18 @@
 
 .sideBtn-closed{
   margin-left: 4%;
-  transition: 0.4s ease-in;
-}
-
-.sidebarBtn {
-  margin-top: 1rem;
-  background: transparent;
-  padding: 10px;
-  border: 1px solid white;
-  border-radius: 4px;
-  color: white;
-  transition: 0.3s linear;
 }
 
 .sidebar {
-  margin-top: 6vh;
+  margin-top: 5.8vh;
   position: fixed;
   width: 45%;
-  height: 94%;
-  background: #ffb12b;
+  height: 94.2%;
+  /* background: #ffb12b; */
+  background: #ffd894;
   /* color: white; */
-  transition: 0.4s ease-in;
-  z-index: -1;
+  transition: 0.3s ease-in;
+  z-index: 1;
 }
 
 .sidebar-closed {
@@ -71,18 +61,51 @@ ul {
   flex-direction: column;
 }
 
-.row1{
+.form{
   height: 23.5vh;
+  border-bottom: .15rem solid #D0D0D0;
 }
 
-.row2{
-  height: 23.5vh;
+.formContainer{
+  margin: 2rem 3rem;
 }
 
-.row3{
-  height: 23.5vh;
+.formTitle{
+  color: rgb(75, 75, 75);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
 }
 
-.row4{
-  height: 23.5vh;
+.datePickerContainer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.datePicker{
+  width: 40%;
+}
+
+.rateContainer, .roomContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.rateBlock{
+  width: 48%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 2rem 0;
+  color: rgb(75, 75, 75);
+}
+
+.roomBlock{
+  width: 48%;
+  margin: 0 0 1rem 0;
+}
+
+.temp{
+  padding: 0 !important;
 }

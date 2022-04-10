@@ -1,0 +1,68 @@
+.BTOContainer{
+  display:flex;     
+  justify-content:center;   
+}
+
+.BTOBox{
+  margin-top: 6rem;
+  width: 75%;
+  border-radius: .5rem;
+  background-color: white;
+  padding: 3rem;
+  height: 100%;
+  margin-bottom: 3rem;
+}
+
+.BTOContainer1{
+  display: flex;
+  align-items:center;   
+  justify-content: space-between; 
+  margin-bottom: 1rem;
+  width: 100;
+  margin-bottom: 5rem;
+}
+
+.BTOTitle{
+  display:flex;     
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.BTOContainer2{
+  margin-bottom: 3rem;
+} 
+
+.BTOSubTitle{
+  font-size: 1.2rem;
+  opacity: 50%;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.BTOContent{
+  font-weight: 600;
+  opacity: 80%;
+}
+
+.BTOImage{
+  width: 100%;
+  height: 35%;
+}
+
+.BTOContainer3{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.BTOContainer4{
+  display: flex;
+  align-items: center;
+  /* justify-content:center;    */
+}
+
+.BTOMapContainer{
+  margin: 3rem 0 5rem 0;
+  width: 100%;
+  height: 50vh;
+}

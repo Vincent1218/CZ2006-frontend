@@ -1,0 +1,38 @@
+.cardContainer1{
+  display: flex;
+  align-items:center;   
+  justify-content: space-between; 
+  margin-bottom: 1rem;
+}
+
+.cardTitle{
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.cardContainer2{
+  display: flex;
+  align-items:center;   
+  margin-bottom: 1rem;
+}
+
+.cardSubTitle{
+  /* font-size: .9rem; */
+  opacity: 50%;
+  font-weight: 600;
+}
+
+.cardPrice{
+  font-weight: 600;
+  opacity: 80%;
+}
+
+.cardDate{
+  font-weight: 600;
+  opacity: 80%;
+  margin-left: 2rem;
+}
+
+.blank{
+  height: 1rem;
+}

@@ -1,0 +1,64 @@
+.signContainer{
+  height:100vh;    
+  display:flex;    
+  align-items:center;    
+  justify-content:center;   
+}
+
+.signBox{
+  width: 20%;
+  border-radius: .5rem;
+  background-color: aliceblue;
+  padding: 2.5rem;
+  display:flex;    
+  /* justify-content:center;    */
+  align-items: center;
+  flex-direction: column;
+}
+
+.signLogo{
+  color: #FFAA1C;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.signForm{
+  width: 100%;
+  margin: 15% 0;
+}
+
+.signFormTitle{
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 7%;
+}
+
+.signTextField{
+  margin: 3% 0 !important;
+}
+
+.signButton{
+  background-color: #FFAA1C !important;
+  width: 100%;
+  font-weight: 600 !important;
+  margin-bottom: 3% !important;
+}
+
+.signReminder{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100% ;
+  margin-bottom: 2rem;
+}
+
+.signButton1{
+  color: #FFAA1C !important;
+  padding: 0 !important;
+  margin-left: 2% !important;
+  font-size: 1rem;
+}
+
+.signLink{
+  text-decoration: none;
+}

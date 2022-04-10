@@ -1,6 +1,7 @@
 .NavBar{
-  height: 6vh;
-  background: #FFE0AC;
+  height: 5.8vh;
+  /* background: #ffd182; */
+  background: #FFAA1C;
   position: fixed;
   width: 100vw ;
   display: flex;
@@ -8,6 +9,7 @@
   font-weight: bold;
   font-size: 1rem;
   align-items: center;
+  z-index: 1;
 }
 
 .NavBarSub1{
@@ -25,29 +27,33 @@
 
 .NavBarBtn{
   text-decoration: none;
-  width: 100% ;
+  color: black;
+  width: 80% ;
 }
 
 .signInBtn{
-  background-color: #ffb12b;
+  /* background-color: #ffb12b; */
+  background-color:#ffd894;
   height: 2.5rem;
-  width: 6rem;
+  width: 70%;
+  /* width: 6rem; */
   border-radius: .3rem;
   margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: rgb(73, 73, 73);
 }
 
 .signInBtn:hover {
-  background-color: #8d816e;
+  background-color: #ffd181;
 }
 
 .Logo{
   margin: auto;
   font-size: 1.5rem;
-  color: #FFAA1C;
+  /* color: #FFAA1C; */
+  color:#fff2dc !important;
 }
 
 .NavBarSearch{
@@ -59,9 +65,39 @@
 }
 
 .NavBarSub2{
-  width: 75%;
+  width: 70%;
+  display: flex;
+  justify-content: center;
 }
 
 .NavBarSub3{
-  width: 15%;
+  width: 20%;
+}
+
+.SearchBar{
+  background-color: white;
+  border-radius: .3rem;
+  width: 50%;
+}
+
+.NavBarContainer{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.userBtn{
+  height: 100% !important;
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
+
+.logoutContainer{
+  width: 10vw;
+  padding: .5rem;
+}
+
+.logoutBtn{
+  width: 100%;
 }

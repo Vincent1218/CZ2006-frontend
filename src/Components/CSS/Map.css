@@ -1,0 +1,12 @@
+.mapContainer{
+  padding-top: 5.8vh;
+  margin-left: 4vw;
+  height: 94.2vh;
+  width: 96vw;
+}
+
+.hoverCard{
+  display: flex;
+  align-items:center;   
+  justify-content: space-between; 
+}
