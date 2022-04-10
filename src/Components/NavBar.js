@@ -24,7 +24,7 @@ const NavBar = ({BTOS,setSearchedBTOList}) => {
     // console.log(token);
     if (token) {
       try{
-        const res = await axios.post('http://172.21.148.171/api/logout','',{ headers: {'Authorization' : `Bearer ${token}`} });
+        const res = await axios.post('https://cors-everywhere.herokuapp.com/http://ec2-18-144-59-5.us-west-1.compute.amazonaws.com/api/logout','',{ headers: {'Authorization' : `Bearer ${token}`} });
         if(res.status===204){
           console.log("Logged Out")
           localStorage.clear();

@@ -15,7 +15,7 @@ const BookMark = () => {
       const token = localStorage.getItem("token");
       var data =[];
       try{
-        const res = await axios.get('http://172.21.148.171/api/get-bookmarks', { headers: {'Authorization' : `Bearer ${token}`} });  
+        const res = await axios.get('https://cors-everywhere.herokuapp.com/http://ec2-18-144-59-5.us-west-1.compute.amazonaws.com/api/get-bookmarks', { headers: {'Authorization' : `Bearer ${token}`} });  
         if(res.status === 200){
           setBookmarkList(res.data);
           data = res.data;
@@ -34,7 +34,7 @@ const BookMark = () => {
 
       if(stringParam){
         try{
-          const res = await axios.get(`http://172.21.148.171/api/bto-projects-by-ids?`+stringParam);
+          const res = await axios.get(`https://cors-everywhere.herokuapp.com/http://ec2-18-144-59-5.us-west-1.compute.amazonaws.com/api/bto-projects-by-ids?`+stringParam);
           if(res.status===200){
             setBTOS(res.data);
           }

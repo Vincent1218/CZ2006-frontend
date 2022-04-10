@@ -25,7 +25,7 @@ const BTOCard = ({BTO, bookmarkList, setBookmarkList, setMessage, setShowNotific
     if (token) {
       if(markClicked){
         const json = JSON.stringify({ id: id});
-        const res = await axios.post('http://172.21.148.171/api/remove-bookmark', json, { headers: {'Authorization' : `Bearer ${token}`} });
+        const res = await axios.post('https://cors-everywhere.herokuapp.com/http://ec2-18-144-59-5.us-west-1.compute.amazonaws.com/api/remove-bookmark', json, { headers: {'Authorization' : `Bearer ${token}`} });
         if(res.status===204){
           // console.log("Bookmard removed")
           var filtered = bookmarkList.filter(function(value, index, arr){ 
@@ -39,7 +39,7 @@ const BTOCard = ({BTO, bookmarkList, setBookmarkList, setMessage, setShowNotific
       }
       else{
         const json = JSON.stringify({ id: id});
-        const res = await axios.post('http://172.21.148.171/api/add-bookmark',  json, { headers: {'Authorization' : `Bearer ${token}`} });
+        const res = await axios.post('https://cors-everywhere.herokuapp.com/http://ec2-18-144-59-5.us-west-1.compute.amazonaws.com/api/add-bookmark',  json, { headers: {'Authorization' : `Bearer ${token}`} });
         if(res.status===204){
           // console.log("Bookmard added")
           let tempArr = [...bookmarkList];

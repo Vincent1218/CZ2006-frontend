@@ -20,7 +20,7 @@ const Signin = () => {
     var hash = hashObj.getHash("HEX");
     // console.log(hash)
     const json = JSON.stringify({ email: email, hashed_password: hash});
-    const res = await axios.post('http://172.21.148.171/api/login', json);
+    const res = await axios.post('https://cors-everywhere.herokuapp.com/http://ec2-18-144-59-5.us-west-1.compute.amazonaws.com/api/login', json);
     if(res.status===200){
       // console.log("User Loggedin")
       // Get jwttoken here

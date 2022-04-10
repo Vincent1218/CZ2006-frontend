@@ -74,7 +74,7 @@ const BTO = () => {
   useEffect(() => {
     const fetchData = async () =>{
       try{
-        const res = await axios.get(`http://172.21.148.171/api/bto-projects-by-ids?ids=`+getParameterByName('ids'));
+        const res = await axios.get(`https://cors-everywhere.herokuapp.com/http://ec2-18-144-59-5.us-west-1.compute.amazonaws.com/api/bto-projects-by-ids?ids=`+getParameterByName('ids'));
         if(res.status===200){
           setBTO(res.data[0]);
           // console.log(res.data[0])
