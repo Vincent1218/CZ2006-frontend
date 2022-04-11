@@ -193,7 +193,7 @@ const BTO = () => {
           <div className="BTOSubTitle">Overview</div>
           <div className="BTOContent">{BTO.overview}</div>
         </div>
-        <div className = "BTOMapContainer BTOContainer2">
+        <div className = "BTOContainer2">
           <div className="BTOContainer3">
             <div className="BTOContainer4">
               BTO: <LocationOnIcon fontSize="large" sx={{ color: '#FFAA1C'}}/>
@@ -214,90 +214,91 @@ const BTO = () => {
           <div className="helperText"> 
             <Alert severity="info">To check facilities' name, click on the pin icon. </Alert>
           </div> 
-
-          <GoogleMapReact
-            bootstrapURLKeys={{ key: 'AIzaSyDeJCobiAJJYFMzX8YiDabJqHITW1bZg_Y' }}
-            defaultCenter = {coords}
-            center= {{lat : BTO.lat, lng: BTO.lon }}
-            defaultZoom={15}
-            margin={[50, 50, 50, 50]}
-            options={{ disableDefaultUI: true, zoomControl: true }}
-          >
-          <div
-            lat={Number(BTO.lat)}
-            lng={Number(BTO.lon)}
-          >
-            <LocationOnIcon fontSize="large"
-            sx={{ color: '#FFAA1C'}}
-            />
-          </div>
-          {BTO.scores_detail.convenience.pois?.map((poi,i) =>(
+          <div className = "BTOMapContainer">
+            <GoogleMapReact
+              bootstrapURLKeys={{ key: 'AIzaSyDeJCobiAJJYFMzX8YiDabJqHITW1bZg_Y' }}
+              defaultCenter = {coords}
+              center= {{lat : BTO.lat, lng: BTO.lon }}
+              defaultZoom={15}
+              margin={[50, 50, 50, 50]}
+              options={{ disableDefaultUI: true, zoomControl: true }}
+            >
             <div
-              lat={Number(poi.Lat)}
-              lng={Number(poi.Lon)}
-              key={i}
+              lat={Number(BTO.lat)}
+              lng={Number(BTO.lon)}
             >
               <LocationOnIcon fontSize="large"
-              sx={{ color: '#FF6363'}}
-              onClick={(e) => handleClick(e,0,i)}
+              sx={{ color: '#FFAA1C'}}
               />
             </div>
-          ))}
-          {BTO.scores_detail.education.pois?.map((poi,i) =>(
-            <div
-              lat={Number(poi.Lat)}
-              lng={Number(poi.Lon)}
-              key={i}
-            >
-              <LocationOnIcon fontSize="large"
-              sx={{ color: '#753188'}}
-              onClick={(e) => handleClick(e,1,i)}
-              />
-            </div>
-          ))}
-          {BTO.scores_detail.recreation.pois?.map((poi,i) =>(
-            <div
-              lat={Number(poi.Lat)}
-              lng={Number(poi.Lon)}
-              key={i}
-            >
-              <LocationOnIcon fontSize="large"
-              sx={{ color: '#3E8E7E'}}
-              onClick={(e) => handleClick(e,2,i)}
-              />
-            </div>
-          ))}
-          {BTO.scores_detail.transportation.pois?.map((poi,i) =>(
-            <div
-              lat={Number(poi.Lat)}
-              lng={Number(poi.Lon)}
-              key={i}
-            >
-              <LocationOnIcon fontSize="large"
-              sx={{ color: '#333C83'}}
-              onClick={(e) => handleClick(e,3,i)}
-              />
-            </div>
-          ))}
-            <Popover 
-            id={id}
-            open={open}
-            anchorEl={anchorEl}
-            onClose={handleClose}
-            anchorOrigin={{
-              vertical: 'bottom',
-              horizontal: 'center',
-            }}
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'center',
-            }}
-            >
-              <div className="poiName">
-                {poiName}    
+            {BTO.scores_detail.convenience.pois?.map((poi,i) =>(
+              <div
+                lat={Number(poi.Lat)}
+                lng={Number(poi.Lon)}
+                key={i}
+              >
+                <LocationOnIcon fontSize="large"
+                sx={{ color: '#FF6363'}}
+                onClick={(e) => handleClick(e,0,i)}
+                />
               </div>
-            </Popover>
-          </GoogleMapReact>
+            ))}
+            {BTO.scores_detail.education.pois?.map((poi,i) =>(
+              <div
+                lat={Number(poi.Lat)}
+                lng={Number(poi.Lon)}
+                key={i}
+              >
+                <LocationOnIcon fontSize="large"
+                sx={{ color: '#753188'}}
+                onClick={(e) => handleClick(e,1,i)}
+                />
+              </div>
+            ))}
+            {BTO.scores_detail.recreation.pois?.map((poi,i) =>(
+              <div
+                lat={Number(poi.Lat)}
+                lng={Number(poi.Lon)}
+                key={i}
+              >
+                <LocationOnIcon fontSize="large"
+                sx={{ color: '#3E8E7E'}}
+                onClick={(e) => handleClick(e,2,i)}
+                />
+              </div>
+            ))}
+            {BTO.scores_detail.transportation.pois?.map((poi,i) =>(
+              <div
+                lat={Number(poi.Lat)}
+                lng={Number(poi.Lon)}
+                key={i}
+              >
+                <LocationOnIcon fontSize="large"
+                sx={{ color: '#333C83'}}
+                onClick={(e) => handleClick(e,3,i)}
+                />
+              </div>
+            ))}
+              <Popover 
+              id={id}
+              open={open}
+              anchorEl={anchorEl}
+              onClose={handleClose}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'center',
+              }}
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'center',
+              }}
+              >
+                <div className="poiName">
+                  {poiName}    
+                </div>
+              </Popover>
+            </GoogleMapReact>
+          </div> 
         </div>
         <ImageList className="BTOContainer2" sx={{ width: 1, height: 800 }} cols={1}>
           {floorPlans.map((floorPlan,i) => (
