@@ -16,7 +16,7 @@ import axios from 'axios';
 
 const Sidebar = ({setFilteredBTOList}) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [startDateValue, setStartDateValue] = useState(0);
+  const [startDateValue, setStartDateValue] = useState(Date().getTime);
   const [endDateValue, setEndDateValue] = useState(4081052513000);
   const [location, setLocation] = useState('');
   const [ratingValue, setRatingValue] = useState([0,0,0,0]);

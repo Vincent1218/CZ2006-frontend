@@ -8,10 +8,15 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import axios from 'axios';
+import Popover from '@mui/material/Popover';
+import Alert from '@mui/material/Alert';
 
 const BTO = () => {
   const [floorPlans, setFloorPlans] = useState([]);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [poiName, setPoiName] = useState("");
   const coords = { lat: 1.3521, lng: 103.8198 };
+
   const [BTO, setBTO] = useState({
     "id": 0,
     "name": " ",
@@ -34,8 +39,8 @@ const BTO = () => {
         "pois": null
       }
     },
-    "lat": 1.3521,
-    "lon": 103.8198,
+    "lat": "",
+    "lon": "",
     "preview_image": "",
     "address": "",
     "locality": "",
@@ -60,6 +65,19 @@ const BTO = () => {
     "overview": "",
     "floor_plans_blob_uri": []
   });
+
+  const open = Boolean(anchorEl);
+  const id = open ? 'simple-popover' : undefined;
+
+  const rating = ["convenience","education","recreation","trsanportation"]
+  const handleClick = (event,j,i) => {
+    setAnchorEl(event.currentTarget);
+    setPoiName(BTO.scores_detail[rating[j]].pois[i].Name);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   const getParameterByName= (name, url) => {
     if (!url) url = window.location.href;
@@ -192,12 +210,16 @@ const BTO = () => {
             <div className="BTOContainer4">
               Transportation: <LocationOnIcon fontSize="large" sx={{ color: '#333C83'}}/>
             </div>
-          </div>  
+          </div> 
+          <div className="helperText"> 
+            <Alert severity="info">To check facilities' name, click on the pin icon. </Alert>
+          </div> 
 
           <GoogleMapReact
             bootstrapURLKeys={{ key: 'AIzaSyDeJCobiAJJYFMzX8YiDabJqHITW1bZg_Y' }}
             defaultCenter = {coords}
-            defaultZoom={12}
+            center= {{lat : BTO.lat, lng: BTO.lon }}
+            defaultZoom={15}
             margin={[50, 50, 50, 50]}
             options={{ disableDefaultUI: true, zoomControl: true }}
           >
@@ -207,7 +229,6 @@ const BTO = () => {
           >
             <LocationOnIcon fontSize="large"
             sx={{ color: '#FFAA1C'}}
-            // onMouseEnter={(e)=>handlePopoverOpen(e,i)}
             />
           </div>
           {BTO.scores_detail.convenience.pois?.map((poi,i) =>(
@@ -218,7 +239,7 @@ const BTO = () => {
             >
               <LocationOnIcon fontSize="large"
               sx={{ color: '#FF6363'}}
-              // onMouseEnter={(e)=>handlePopoverOpen(e,i)}
+              onClick={(e) => handleClick(e,0,i)}
               />
             </div>
           ))}
@@ -230,7 +251,7 @@ const BTO = () => {
             >
               <LocationOnIcon fontSize="large"
               sx={{ color: '#753188'}}
-              // onMouseEnter={(e)=>handlePopoverOpen(e,i)}
+              onClick={(e) => handleClick(e,1,i)}
               />
             </div>
           ))}
@@ -242,7 +263,7 @@ const BTO = () => {
             >
               <LocationOnIcon fontSize="large"
               sx={{ color: '#3E8E7E'}}
-              // onMouseEnter={(e)=>handlePopoverOpen(e,i)}
+              onClick={(e) => handleClick(e,2,i)}
               />
             </div>
           ))}
@@ -254,10 +275,28 @@ const BTO = () => {
             >
               <LocationOnIcon fontSize="large"
               sx={{ color: '#333C83'}}
-              // onMouseEnter={(e)=>handlePopoverOpen(e,i)}
+              onClick={(e) => handleClick(e,3,i)}
               />
             </div>
           ))}
+            <Popover 
+            id={id}
+            open={open}
+            anchorEl={anchorEl}
+            onClose={handleClose}
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'center',
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'center',
+            }}
+            >
+              <div className="poiName">
+                {poiName}    
+              </div>
+            </Popover>
           </GoogleMapReact>
         </div>
         <ImageList className="BTOContainer2" sx={{ width: 1, height: 800 }} cols={1}>
