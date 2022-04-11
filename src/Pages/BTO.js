@@ -165,25 +165,25 @@ const BTO = () => {
           <Grid container spacing={2}>
             <Grid item xs={12} md={6} xl={3}>
               <div className="BTOContainer3">
-                <div className="BTOContent">Education</div>
+                <div className="BTOContent">2 Rooms</div>
                 <div className="BTOContent">{BTO.price_by_room.two_rooms.lower}-{BTO.price_by_room.two_rooms.lower}</div>
               </div>
             </Grid>
             <Grid item xs={12} md={6} xl={3}>
               <div className="BTOContainer3">
-                <div className="BTOContent">Recreation</div>
+                <div className="BTOContent">3 Rooms</div>
                 <div className="BTOContent">{BTO.price_by_room.three_rooms.lower}-{BTO.price_by_room.three_rooms.higher}</div>
               </div>
             </Grid>
             <Grid item xs={12} md={6} xl={3}>
               <div className="BTOContainer3">
-                <div className="BTOContent">Convenience</div>
+                <div className="BTOContent">4 Rooms</div>
                 <div className="BTOContent">{BTO.price_by_room.four_rooms.lower}-{BTO.price_by_room.four_rooms.higher}</div>
               </div>
             </Grid>
             <Grid item xs={12} md={6} xl={3}>
               <div className="BTOContainer3">
-                <div className="BTOContent">Transportation</div>
+                <div className="BTOContent">5 Rooms</div>
                 <div className="BTOContent">{BTO.price_by_room.five_rooms.lower}-{BTO.price_by_room.five_rooms.higher}</div>
               </div>
             </Grid>
