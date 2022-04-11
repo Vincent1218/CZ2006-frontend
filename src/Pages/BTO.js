@@ -69,7 +69,7 @@ const BTO = () => {
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
 
-  const rating = ["convenience","education","recreation","trsanportation"]
+  const rating = ["convenience","education","recreation","transportation"]
   const handleClick = (event,j,i) => {
     setAnchorEl(event.currentTarget);
     setPoiName(BTO.scores_detail[rating[j]].pois[i].Name);
@@ -95,6 +95,7 @@ const BTO = () => {
         const res = await axios.get(`https://cors-everywhere.herokuapp.com/http://ec2-18-144-59-5.us-west-1.compute.amazonaws.com/api/bto-projects-by-ids?ids=`+getParameterByName('ids'));
         if(res.status===200){
           setBTO(res.data[0]);
+          console.log(res.data[0]);
           // console.log(res.data[0])
           // console.log(res.data[0])
         }
