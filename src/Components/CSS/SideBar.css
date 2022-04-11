@@ -29,6 +29,8 @@
   height: 8%;
   margin-left: 45%;
   z-index: 1;
+  display: flex;
+  align-items: center;
 }
 
 .sideBtn-closed{

@@ -12,6 +12,8 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import axios from 'axios';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 // import res from './test.json';
 
 const Sidebar = ({setFilteredBTOList}) => {
@@ -76,7 +78,15 @@ const Sidebar = ({setFilteredBTOList}) => {
 
   return (
     <div>
-      <div className={cx("sideBtn", { "sideBtn-closed": !isOpen })} onClick={() => setIsOpen(!isOpen)}></div>
+      {isOpen
+      ?<div className="sideBtn" onClick={() => setIsOpen(!isOpen)}>
+        <ArrowBackIosNewIcon sx={{ color: '#4d4d4d' }}/>
+      </div>
+      :<div className={cx("sideBtn", "sideBtn-closed")} onClick={() => setIsOpen(!isOpen)}>
+        <ArrowForwardIosIcon sx={{ color: '#4d4d4d' }}/>
+      </div>
+      }
+
       <div className={cx("sidebar", { "sidebar-closed": !isOpen })}>
         <CSSTransition
           in={isOpen}
