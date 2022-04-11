@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import {NavLink} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Notification from '../Components/Notification'
+import LoginHooks from '../Components/LoginHooks'
 
 const Signin = () => {
   let navigate = useNavigate(); 
@@ -90,7 +91,12 @@ const Signin = () => {
               <Button className="signButton1" variant="text">Sign Up</Button>
             </NavLink>
           </div>
+          <div className="googleLine">
+            or
+          </div>
+          <LoginHooks setMessage={setMessage} setShowNotification={setShowNotification} setLevel={setLevel}/>
       </div>
+      
     </div>
   )
 }

@@ -1,14 +1,16 @@
 import {React, useEffect, useState} from 'react'
 import './CSS/NavBar.css'
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate} from "react-router-dom";
 import TextField from '@mui/material/TextField';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Popover from '@mui/material/Popover';
 import Button from '@mui/material/Button';
 import axios from 'axios';
+import { useGoogleLogout } from 'react-google-login';
 
 const NavBar = ({BTOS, setSearchedBTOList, setMessage, setShowNotification, setLevel}) => {
   let navigate = useNavigate(); 
+  const clientId = '156062482264-s76hfn9fm4ekjpfviqrkqj1bbk3ri7ug.apps.googleusercontent.com';
   const [isLogin, setIsLogin] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const handleClick = (event) => {
@@ -19,26 +21,54 @@ const NavBar = ({BTOS, setSearchedBTOList, setMessage, setShowNotification, setL
     setAnchorEl(null);
   };
 
+  const onLogoutSuccess = (res) => {
+    localStorage.clear();
+    setMessage("Logged Out Successfully!");
+    setLevel("success")
+    setShowNotification(true);
+    setTimeout(() => {setShowNotification(false)}, 2000);
+  };
+
+  const onFailure = () => {
+    setMessage("Log Out Failed!(google)");
+    setLevel("error")
+    setShowNotification(true);
+    setTimeout(() => {setShowNotification(false)}, 2000);
+  };
+
+  const { signOut } = useGoogleLogout({
+    clientId,
+    onLogoutSuccess,
+    onFailure,
+  });
+
   const logout = async() => {
     const token = localStorage.getItem("token");
+    const google = localStorage.getItem("google");
+    if(google){
+      signOut();
+    }
     // console.log(token);
     if (token) {
       try{
         const res = await axios.post('https://cors-everywhere.herokuapp.com/http://ec2-18-144-59-5.us-west-1.compute.amazonaws.com/api/logout','',{ headers: {'Authorization' : `Bearer ${token}`} });
+        console.log(res);
         if(res.status===204){
-          console.log("Logged Out")
           localStorage.clear();
           let path = `/`; 
           navigate(path);
           window.location.reload(false);
-          setMessage("Log Out Successfully!");
-          setLevel("success")
-          setShowNotification(true);
-          setTimeout(() => {setShowNotification(false)}, 2000);
+          // setMessage("Logged Out Successfully!");
+          // setLevel("success")
+          // setShowNotification(true);
+          // setTimeout(() => {setShowNotification(false)}, 2000);
         }
       }
       catch(error){
-        // console.log(error);
+        setMessage("Log Out Failed!");
+        setLevel("error")
+        setShowNotification(true);
+        setTimeout(() => {setShowNotification(false)}, 2000);
       }
     }
   }
