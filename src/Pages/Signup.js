@@ -52,7 +52,7 @@ const Login = () => {
     try{
       const res = await axios.post('https://cors-everywhere.herokuapp.com/http://ec2-18-144-59-5.us-west-1.compute.amazonaws.com/api/signup', json);
       if(res.status===201){
-        console.log(res);
+        // console.log(res);
         localStorage.setItem('token', res.data.token);
         // console.log("User Created");
         let path = `/`; 

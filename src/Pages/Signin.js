@@ -15,9 +15,27 @@ const Signin = () => {
   const [message, setMessage] = useState("");
   const [level, setLevel] = useState("");
 
+  const validateEmail = (email) => {
+    return email.match(
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+  };
+
   const clickSignin = async() =>{
-    // console.log(email);
-    // console.log(password);
+    if (!validateEmail(email)){
+      setMessage("Please enter a valid email!");
+      setLevel("error")
+      setShowNotification(true);
+      setTimeout(() => {setShowNotification(false)}, 2000);
+      return;
+    }
+    if(!password){
+      setMessage("Please enter a password!");
+      setLevel("error")
+      setShowNotification(true);
+      setTimeout(() => {setShowNotification(false)}, 2000);
+      return;
+    }
     const jsSHA = require("jssha");
     var hashObj = new jsSHA("SHA-512", "TEXT", {numRounds: 1});
     hashObj.update(password);
