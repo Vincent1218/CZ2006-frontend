@@ -14,7 +14,6 @@ import Select from '@mui/material/Select';
 import axios from 'axios';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-// import res from './test.json';
 
 const Sidebar = ({setFilteredBTOList}) => {
   const [isOpen, setIsOpen] = useState(false);
