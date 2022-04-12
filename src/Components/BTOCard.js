@@ -113,25 +113,25 @@ const BTOCard = ({BTO, bookmarkList, setBookmarkList, setMessage, setShowNotific
               <Grid Grid item xs={12} xl={6}>
                 <div className="cardContainer1">
                   <div className="cardSubTitle">2 Rooms</div>
-                  <div className="cardPrice">{BTO.price_by_room.two_rooms.lower}-{BTO.price_by_room.two_rooms.higher}</div>
+                  <div className="cardPrice">{BTO.price_by_room.two_rooms.lower ? BTO.price_by_room.two_rooms.lower : "" }-{BTO.price_by_room.two_rooms.higher ? BTO.price_by_room.two_rooms.higher : "" }</div>
                 </div>
               </Grid>
               <Grid item xs={12} xl={6}>  
                 <div className="cardContainer1">
                   <div className="cardSubTitle">3 Rooms</div>
-                  <div className="cardPrice">{BTO.price_by_room.three_rooms.lower}-{BTO.price_by_room.three_rooms.higher}</div>
+                  <div className="cardPrice">{BTO.price_by_room.three_rooms.lower ? BTO.price_by_room.three_rooms.lower : "" }-{BTO.price_by_room.three_rooms.higher ? BTO.price_by_room.three_rooms.higher : "" }</div>
                 </div>
               </Grid>
               <Grid item xs={12} xl={6}>
                 <div className="cardContainer1">
                   <div className="cardSubTitle">4 Rooms</div>
-                  <div className="cardPrice">{BTO.price_by_room.four_rooms.lower}-{BTO.price_by_room.four_rooms.higher}</div>
+                  <div className="cardPrice">{BTO.price_by_room.four_rooms.lower ? BTO.price_by_room.four_rooms.lower : "" }-{BTO.price_by_room.four_rooms.higher ? BTO.price_by_room.four_rooms.higher : "" }</div>
                 </div>
               </Grid>
               <Grid item xs={12} xl={6}>
                 <div className="cardContainer1">
                   <div className="cardSubTitle">5 Rooms</div>
-                  <div className="cardPrice">{BTO.price_by_room.five_rooms.lower}-{BTO.price_by_room.five_rooms.higher}</div>
+                  <div className="cardPrice">{BTO.price_by_room.five_rooms.lower ? BTO.price_by_room.five_rooms.lower : "" }-{BTO.price_by_room.five_rooms.higher ? BTO.price_by_room.five_rooms.higher : "" }</div>
                 </div>
               </Grid>
             </Grid>

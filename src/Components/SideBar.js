@@ -72,7 +72,7 @@ const Sidebar = ({setFilteredBTOList}) => {
 
   const pickRoom = (newValue, i) =>{
     let tempArr = [...roomValue];
-    tempArr[2*i] = (newValue);
+    tempArr[2*i+1] = (newValue);
     setRoomValue(tempArr);
   }
 
@@ -211,19 +211,19 @@ const Sidebar = ({setFilteredBTOList}) => {
                       <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
-                        value={roomValue[0]}
+                        value={roomValue[1]}
                         label="2 Rooms"
                         onChange={(event) => {
                           pickRoom(event.target.value, 0);
                         }}
                       >
-                        <MenuItem value={0}>All Range</MenuItem>
-                        <MenuItem value={100000}>100,000+</MenuItem>
-                        <MenuItem value={200000}>200,000+</MenuItem>
-                        <MenuItem value={300000}>300,000+</MenuItem>
-                        <MenuItem value={400000}>400,000+</MenuItem>
-                        <MenuItem value={500000}>500,000+</MenuItem>
-                        <MenuItem value={600000}>600,000+</MenuItem>
+                        <MenuItem value={999999999999}>All Range</MenuItem>
+                        <MenuItem value={100000}>100,000-</MenuItem>
+                        <MenuItem value={200000}>200,000-</MenuItem>
+                        <MenuItem value={300000}>300,000-</MenuItem>
+                        <MenuItem value={400000}>400,000-</MenuItem>
+                        <MenuItem value={500000}>500,000-</MenuItem>
+                        <MenuItem value={600000}>600,000-</MenuItem>
                       </Select>
                    </FormControl>
                   </div>
@@ -233,19 +233,19 @@ const Sidebar = ({setFilteredBTOList}) => {
                       <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
-                        value={roomValue[2]}
+                        value={roomValue[3]}
                         label="3 Rooms"
                         onChange={(event) => {
                           pickRoom(event.target.value, 1);
                         }}
                       >
-                        <MenuItem value={0}>All Range</MenuItem>
-                        <MenuItem value={100000}>100,000+</MenuItem>
-                        <MenuItem value={200000}>200,000+</MenuItem>
-                        <MenuItem value={300000}>300,000+</MenuItem>
-                        <MenuItem value={400000}>400,000+</MenuItem>
-                        <MenuItem value={500000}>500,000+</MenuItem>
-                        <MenuItem value={600000}>600,000+</MenuItem>
+                        <MenuItem value={999999999999}>All Range</MenuItem>
+                        <MenuItem value={100000}>100,000-</MenuItem>
+                        <MenuItem value={200000}>200,000-</MenuItem>
+                        <MenuItem value={300000}>300,000-</MenuItem>
+                        <MenuItem value={400000}>400,000-</MenuItem>
+                        <MenuItem value={500000}>500,000-</MenuItem>
+                        <MenuItem value={600000}>600,000-</MenuItem>
                       </Select>
                     </FormControl>
                   </div>
@@ -255,19 +255,19 @@ const Sidebar = ({setFilteredBTOList}) => {
                       <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
-                        value={roomValue[4]}
+                        value={roomValue[5]}
                         label="4 Rooms"
                         onChange={(event) => {
                           pickRoom(event.target.value, 2);
                         }}
                       >
-                        <MenuItem value={0}>All Range</MenuItem>
-                        <MenuItem value={100000}>100,000+</MenuItem>
-                        <MenuItem value={200000}>200,000+</MenuItem>
-                        <MenuItem value={300000}>300,000+</MenuItem>
-                        <MenuItem value={400000}>400,000+</MenuItem>
-                        <MenuItem value={500000}>500,000+</MenuItem>
-                        <MenuItem value={600000}>600,000+</MenuItem>
+                        <MenuItem value={999999999999}>All Range</MenuItem>
+                        <MenuItem value={100000}>100,000-</MenuItem>
+                        <MenuItem value={200000}>200,000-</MenuItem>
+                        <MenuItem value={300000}>300,000-</MenuItem>
+                        <MenuItem value={400000}>400,000-</MenuItem>
+                        <MenuItem value={500000}>500,000-</MenuItem>
+                        <MenuItem value={600000}>600,000-</MenuItem>
                       </Select>
                     </FormControl>
                   </div>
@@ -277,24 +277,24 @@ const Sidebar = ({setFilteredBTOList}) => {
                         <Select
                           labelId="demo-simple-select-label"
                           id="demo-simple-select"
-                          value={roomValue[6]}
+                          value={roomValue[7]}
                           label="5 Rooms"
                           onChange={(event) => {
                             pickRoom(event.target.value, 3);
                           }}
                         >
-                        <MenuItem value={0}>All Range</MenuItem>
-                        <MenuItem value={100000}>100,000+</MenuItem>
-                        <MenuItem value={200000}>200,000+</MenuItem>
-                        <MenuItem value={300000}>300,000+</MenuItem>
-                        <MenuItem value={400000}>400,000+</MenuItem>
-                        <MenuItem value={500000}>500,000+</MenuItem>
-                        <MenuItem value={600000}>600,000+</MenuItem>
+                        <MenuItem value={999999999999}>All Range</MenuItem>
+                        <MenuItem value={100000}>100,000-</MenuItem>
+                        <MenuItem value={200000}>200,000-</MenuItem>
+                        <MenuItem value={300000}>300,000-</MenuItem>
+                        <MenuItem value={400000}>400,000-</MenuItem>
+                        <MenuItem value={500000}>500,000-</MenuItem>
+                        <MenuItem value={600000}>600,000-</MenuItem>
                         </Select>
                       </FormControl>
                   </div>
                 </div>
-              </div>
+              </div>999999999999
             </div>
           </div>
         </CSSTransition>
