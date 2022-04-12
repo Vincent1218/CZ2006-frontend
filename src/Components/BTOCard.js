@@ -53,7 +53,7 @@ const BTOCard = ({BTO, bookmarkList, setBookmarkList, setMessage, setShowNotific
       setMarkClicked(!markClicked);
     }
     else{
-      setMessage("You are not logged in! Please sign in to use bookmark feature.");
+      setMessage("You are not logged in! Please sign up / log in to use bookmark feature.");
       setLevel("error")
       setShowNotification(true);
       setTimeout(() => {setShowNotification(false)}, 2000);

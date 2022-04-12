@@ -111,7 +111,7 @@ const NavBar = ({BTOS, setSearchedBTOList, setMessage, setShowNotification, setL
         {isLogin ?
         <div className = "NavBarContainer">
           <NavLink className = "NavBarBtn" to="/bookmark" > 
-            <div className = "signInBtn"> BookMark </div>
+            <div className = "signInBtn"> Bookmark </div>
           </NavLink>
           <div className="userBtn">
             <AccountCircleIcon sx={{ fontSize: 40 , color: '#FFF1AF'  }} onClick={handleClick} />
