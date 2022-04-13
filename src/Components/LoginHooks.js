@@ -26,7 +26,7 @@ function LoginHooks({setMessage, setShowNotification, setLevel}) {
         // setMessage("Log In Successfully!");
         // setLevel("success")
         // setShowNotification(true);
-        // setTimeout(() => {setShowNotification(false)}, 2000);
+        // setTimeout(() => {setShowNotification(false)}, 3000);
         let path = `/`; 
         navigate(path);
       }
@@ -34,14 +34,14 @@ function LoginHooks({setMessage, setShowNotification, setLevel}) {
         setMessage("Sign In Failed!");
         setLevel("error")
         setShowNotification(true);
-        setTimeout(() => {setShowNotification(false)}, 2000);
+        setTimeout(() => {setShowNotification(false)}, 3000);
       }
     }
     catch(error){
       setMessage("Sign In Failed!(google)");
       setLevel("error")
       setShowNotification(true);
-      setTimeout(() => {setShowNotification(false)}, 2000);
+      setTimeout(() => {setShowNotification(false)}, 3000);
     }
   };
 

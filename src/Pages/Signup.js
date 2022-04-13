@@ -27,21 +27,21 @@ const Login = () => {
       setMessage("Please enter a valid email!");
       setLevel("error")
       setShowNotification(true);
-      setTimeout(() => {setShowNotification(false)}, 2000);
+      setTimeout(() => {setShowNotification(false)}, 3000);
       return;
     }
     if(!password){
       setMessage("Please enter a password!");
       setLevel("error")
       setShowNotification(true);
-      setTimeout(() => {setShowNotification(false)}, 2000);
+      setTimeout(() => {setShowNotification(false)}, 3000);
       return;
     }
     if(confirmPassword !== password){
       setMessage("Password does not match!");
       setLevel("error")
       setShowNotification(true);
-      setTimeout(() => {setShowNotification(false)}, 2000);
+      setTimeout(() => {setShowNotification(false)}, 3000);
       return;
     }
     const jsSHA = require("jssha");
@@ -62,7 +62,7 @@ const Login = () => {
         setMessage("Sign Up Failed!");
         setLevel("error")
         setShowNotification(true);
-        setTimeout(() => {setShowNotification(false)}, 2000);
+        setTimeout(() => {setShowNotification(false)}, 3000);
       }
     }
     catch(error){
@@ -70,13 +70,13 @@ const Login = () => {
         setMessage("Email is registered! Please proceed to sign in.");
         setLevel("error")
         setShowNotification(true);
-        setTimeout(() => {setShowNotification(false)}, 2000);
+        setTimeout(() => {setShowNotification(false)}, 3000);
       }
       else{
         setMessage("Sign Up Failed!");
         setLevel("error")
         setShowNotification(true);
-        setTimeout(() => {setShowNotification(false)}, 2000);
+        setTimeout(() => {setShowNotification(false)}, 3000);
       }
     }
 

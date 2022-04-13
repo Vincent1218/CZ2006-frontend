@@ -27,14 +27,14 @@ const Signin = () => {
       setMessage("Please enter a valid email!");
       setLevel("error")
       setShowNotification(true);
-      setTimeout(() => {setShowNotification(false)}, 2000);
+      setTimeout(() => {setShowNotification(false)}, 3000);
       return;
     }
     if(!password){
       setMessage("Please enter a password!");
       setLevel("error")
       setShowNotification(true);
-      setTimeout(() => {setShowNotification(false)}, 2000);
+      setTimeout(() => {setShowNotification(false)}, 3000);
       return;
     }
     const jsSHA = require("jssha");
@@ -52,7 +52,7 @@ const Signin = () => {
         // setMessage("Log In Successfully!");
         // setLevel("success")
         // setShowNotification(true);
-        // setTimeout(() => {setShowNotification(false)}, 2000);
+        // setTimeout(() => {setShowNotification(false)}, 3000);
         let path = `/`; 
         navigate(path);
       }
@@ -60,14 +60,14 @@ const Signin = () => {
         setMessage("Sign In Failed!");
         setLevel("error")
         setShowNotification(true);
-        setTimeout(() => {setShowNotification(false)}, 2000);
+        setTimeout(() => {setShowNotification(false)}, 3000);
       }
     }
     catch(error){
       setMessage("Sign In Failed!");
       setLevel("error")
       setShowNotification(true);
-      setTimeout(() => {setShowNotification(false)}, 2000);
+      setTimeout(() => {setShowNotification(false)}, 3000);
     }
     
   }

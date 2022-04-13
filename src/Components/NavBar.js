@@ -26,14 +26,14 @@ const NavBar = ({BTOS, setSearchedBTOList, setMessage, setShowNotification, setL
     setMessage("Logged Out Successfully!");
     setLevel("success")
     setShowNotification(true);
-    setTimeout(() => {setShowNotification(false)}, 2000);
+    setTimeout(() => {setShowNotification(false)}, 3000);
   };
 
   const onFailure = () => {
     setMessage("Log Out Failed!(google)");
     setLevel("error")
     setShowNotification(true);
-    setTimeout(() => {setShowNotification(false)}, 2000);
+    setTimeout(() => {setShowNotification(false)}, 3000);
   };
 
   const { signOut } = useGoogleLogout({
@@ -61,14 +61,14 @@ const NavBar = ({BTOS, setSearchedBTOList, setMessage, setShowNotification, setL
           // setMessage("Logged Out Successfully!");
           // setLevel("success")
           // setShowNotification(true);
-          // setTimeout(() => {setShowNotification(false)}, 2000);
+          // setTimeout(() => {setShowNotification(false)}, 3000);
         }
       }
       catch(error){
         setMessage("Log Out Failed!");
         setLevel("error")
         setShowNotification(true);
-        setTimeout(() => {setShowNotification(false)}, 2000);
+        setTimeout(() => {setShowNotification(false)}, 3000);
       }
     }
   }
